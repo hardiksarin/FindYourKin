@@ -14,7 +14,7 @@ def FindClient(ImgPath):
     f = open(f'temp.jpg', "wb")
     f.write(png_recovered)
     f.close()
-    df = DeepFace.find(img_path = path.abspath("temp.jpg"), db_path = "C:\\Users\\sarin\\Music\\KIN\\Test", model_name = "Facenet")
+    df = DeepFace.find(img_path = path.abspath("temp.jpg"), db_path = "/home/ubuntu/kin/FindYourKin/Test", model_name = "Facenet")
     dl = df['identity'].tolist()
     identities = []
     for i in dl:
