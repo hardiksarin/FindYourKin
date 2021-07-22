@@ -25,13 +25,13 @@ def InsertClient(Aadhar,Name,Age,Sex,Contact,Address,PhysicalAppearance,ImgPath)
     shutil.copy(f'{Aadhar}.jpg', '/home/ubuntu/kin/FindYourKin/Test/Test')
     try:
         os.remove("C:\\Users\\sarin\\Music\\KIN\\Test\\representations_facenet.pkl")
-        DeepFace.find(img_path = path.abspath("temp.jpg"), db_path = "C:\\Users\\sarin\\Music\\KIN\\Test", model_name = "Facenet")
+        DeepFace.find(img_path = path.abspath("temp.jpg"), db_path = "/home/ubuntu/kin/FindYourKin/Test/Test", model_name = "Facenet")
 
         x = mycol.insert_one(mydict)
         return(x)
 
     except:
-        DeepFace.find(img_path = path.abspath("temp.jpg"), db_path = "C:\\Users\\sarin\\Music\\KIN\\Test", model_name = "Facenet")
+        DeepFace.find(img_path = path.abspath("temp.jpg"), db_path = "/home/ubuntu/kin/FindYourKin/Test/Test", model_name = "Facenet")
         x = mycol.insert_one(mydict)
         return(f'MISSPER Already Registred with id : {Aadhar}')
 
