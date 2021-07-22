@@ -22,7 +22,7 @@ def InsertClient(Aadhar,Name,Age,Sex,Contact,Address,PhysicalAppearance,ImgPath)
     embeddings =  MongoConnection.Embedd(path.abspath("temp.jpg"))
     mydict = { "_id":Aadhar, "mp_name": Name,"age":Age ,"gender":Sex,"mp_contact":Contact,"mp_address": Address,
     "mp_physicalAppearance":PhysicalAppearance  ,"embedding":embeddings}
-    shutil.copy(f'{Aadhar}.jpg', 'C:\\Users\\sarin\\Music\\KIN\\Test')
+    shutil.copy(f'{Aadhar}.jpg', '/home/ubuntu/kin/FindYourKin/Test/Test')
     try:
         os.remove("C:\\Users\\sarin\\Music\\KIN\\Test\\representations_facenet.pkl")
         DeepFace.find(img_path = path.abspath("temp.jpg"), db_path = "C:\\Users\\sarin\\Music\\KIN\\Test", model_name = "Facenet")
